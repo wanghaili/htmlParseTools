@@ -1,0 +1,37 @@
+body{
+    background-color: #f7f8f8;
+}
+.page-container{
+    margin:170px auto;
+    width:1000px;
+    text-align: center;
+}
+.page-container h1{
+    font-size: 24px;
+    text-align: center;
+}
+.page-container .main-content{
+    margin-top:50px;
+}
+
+.input-wrap{
+    margin-bottom: 20px;
+}
+.input-wrap label{
+    width:50px;
+    text-align: right;
+}
+.input-wrap input{
+    margin-left:10px;
+    width:300px;
+    height:35px;
+}
+
+.main-content .login-btn{
+    width:300px;
+    height:35px;
+    margin-left:60px;
+    font-size:16px;
+    margin-top:30px;
+}
+

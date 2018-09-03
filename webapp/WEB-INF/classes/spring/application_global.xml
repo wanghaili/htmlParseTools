@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd 
+	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd 
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd  
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd"
+       default-lazy-init="false">
+
+
+    <!-- 读取配置文件数据 -->
+    <bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="ignoreResourceNotFound" value="true"/>
+        <property name="locations">
+            <list>
+                <value>classpath:application.properties</value>
+                <value>classpath:mysql.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 工具类 -->
+    <bean name="serviceLocator" class="cn.edu.bupt.rsx.htmlparser.tools.ServiceLocator" scope="singleton"
+          lazy-init="false"/>
+    <!-- 使用annotation 自动注册bean,并保证@Required,@Autowired的属性被注入 -->
+    <context:annotation-config/>
+    <context:component-scan base-package="cn.edu.bupt.rsx"/>
+
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+    <!-- 以AspectJ方式 定义 AOP -->
+    <aop:config proxy-target-class="true">
+    </aop:config>
+    <import resource="application_dao.xml"/>
+    <import resource="application_shiro.xml" />
+    <!--	<import resource="application_schedule.xml"/> -->
+</beans>

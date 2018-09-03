@@ -1,0 +1,121 @@
+
+.page header{
+    position: absolute;
+    background: transparent;
+}
+
+/*banner样式*/
+.banner{
+    width:100%;
+    height:500px;
+    background: url("../images/index-banner.jpg");
+}
+.inner{
+    width:90%;
+    height: 100%;
+    margin:0 auto;
+    overflow: hidden;
+}
+.inner .banner-title{
+    color:#fff;
+    font-size:50px;
+    margin:150px auto 100px;
+    text-align: center;
+}
+.inner .banner-title p{
+    font-size: 30px;
+}
+.action-wrap{
+    text-align: center;
+}
+.action-wrap a{
+    padding: 10px 20px;
+    cursor: pointer;
+    color:#fff;
+    font-size:16px;
+    border:1px solid #fff;
+    background: transparent;
+}
+.action-wrap a:first-child{
+    margin-right:60px;
+}
+/*.action-wrap a:hover{*/
+    /*background: #36D7D0;*/
+/*}*/
+.action-wrap a img{
+    width:16px;
+    height: auto;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+/*内容部分样式*/
+.content{
+    width: 80%;
+    margin:40px auto 60px;
+}
+.content-header{
+    text-align: center;
+}
+.content-header h2{
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 4px solid #0098E1;
+}
+.content-header p{
+    width:760px;
+    margin:20px auto 0;
+    line-height: 1.5;
+}
+.divider{
+    height: 14px;
+    line-height: 14px;
+    margin-top:50px;
+    font-size: 0px;
+}
+.divider span{
+    display: inline-block;
+}
+.divider .line-icon{
+    width:14px;
+    height:14px;
+    border-radius: 7px;
+    background-color: #0098E1;
+    vertical-align: middle;
+}
+.divider .line{
+    height:1px;
+    width:calc(100% - 14px);
+    background-color: lightgrey;
+    vertical-align: middle;
+}
+
+.row{
+    text-align: center;
+    margin-top:40px;
+}
+.row .icon{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+}
+.row .icon1{
+    background: url("../images/icon1.png") center;
+    background-size: contain;
+}
+.row .icon2{
+    background: url("../images/icon2.png") center;
+    background-size: contain;
+}
+.row .icon3{
+    background: url("../images/icon3.png") center;
+    background-size: contain;
+}
+.row h2{
+    font-size:20px;
+    margin:25px auto 15px;
+}
+
+footer{
+    background: #4C4C4C;
+}

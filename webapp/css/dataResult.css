@@ -1,0 +1,43 @@
+.page-main{
+    width:90%;
+    margin:0 auto;
+    padding-bottom: 60px;
+}
+
+.result-container{
+    width:100%;
+    margin-top:20px;
+    display: flex;
+}
+.result{
+    flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+    margin-left:20px;
+}
+.result-part{
+    padding: 20px;
+    margin-bottom:20px;
+    background: #F7F8F8;
+    box-shadow: 0 2px 2px #eee;
+}
+
+/*选择数据源*/
+.data-result .data-source{
+    padding: 25px 60px;
+}
+.data-result .form-control{
+    display: inline-block;
+    width:350px;
+    height: 30px;
+}
+.data-result .data-source-btn{
+    padding:5px 15px;
+    margin-left: 10px;
+}
+
+.view-wrap{
+    height:500px;
+    margin:20px;
+}

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="KeyWordsMapper">
+
+    <resultMap id="BaseResultMap" type="cn.edu.bupt.rsx.htmlparser.model.KeyWords">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="url" property="url" jdbcType="VARCHAR"/>
+        <result column="keyword" property="keyWord" jdbcType="VARCHAR"/>
+        <result column="weight" property="weight" jdbcType="INTEGER"/>
+        <result column="page_type" property="pageType" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="DATE"/>
+        <result column="file_sign" property="fileSign" jdbcType="BIGINT"/>
+    </resultMap>
+
+<sql id="Base_Column_List">
+    id, url, keyword, page_type, create_time, weight,file_sign
+  </sql>
+
+    <insert id="insert" parameterType="cn.edu.bupt.rsx.htmlparser.model.KeyWords" keyProperty="id"
+            useGeneratedKeys="true">
+        insert into key_words_t (
+        <include refid="Base_Column_List"/>
+        )
+        values (
+        #{id},
+        #{url},
+        #{keyWord},
+        #{pageType},
+        #{createTime},
+        #{weight},
+        #{fileSign}
+        )
+    </insert>
+
+    <insert id="insertList" useGeneratedKeys="true" parameterType="java.util.List">
+        <selectKey keyProperty="id" order="AFTER"
+                   resultType="long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into key_words_t (url, keyword, page_type, create_time, weight,file_sign)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.url},
+            #{item.keyWord},
+            #{item.pageType},
+            #{item.createTime},
+            #{item.weight},
+            #{item.fileSign})
+        </foreach>
+    </insert>
+
+    <delete id="deleteById" parameterType="long">
+  	delete from key_words_t where id = #{id}
+  </delete>
+
+    <select id="selectById" resultMap="BaseResultMap" parameterType="long">
+        select
+        <include refid="Base_Column_List"/>
+        from key_words_t where id = #{id}
+    </select>
+    <update id="updateById" parameterType="cn.edu.bupt.rsx.htmlparser.model.KeyWords">
+        update key_words_t
+        <set>
+            <if test="url != null">
+                url = #{url},
+            </if>
+            <if test="pageType != null">
+                page_type = #{pageType},
+            </if>
+            <if test="fileSign != null">
+                file_sign = #{fileSign},
+            </if>
+            <if test="keyWord != null">
+                keyword = #{keyWord},
+            </if>
+            <if test="createTime != 0">
+                create_time = #{createTime},
+            </if>
+            <if test="weight != null">
+                weight = #{weight}
+            </if>
+        </set>
+        where
+        id = #{id}
+    </update>
+    <select id="selectByIdList" resultMap="BaseResultMap" parameterType="list">
+        select
+        <include refid="Base_Column_List"/>
+        from key_words_t where id in
+        <foreach collection="list" open="(" separator="," close=")" item="id">
+            #{id}
+        </foreach>
+    </select>
+
+    <select id="queryListByParams" resultMap="BaseResultMap" parameterType="list">
+        select
+        <include refid="Base_Column_List"/>
+        from key_words_t
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="url != null">
+                and url = #{url}
+            </if>
+            <if test="pageType != null">
+                and page_type = #{pageType}
+            </if>
+            <if test="fileSign != null">
+                and file_sign = #{fileSign}
+            </if>
+            <if test="keyWord != null">
+                and keyword = #{keyWord}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="weight != null">
+                and weight = #{weight}
+            </if>
+        </where>
+    </select>
+
+    <select id="queryCountTop10" resultType="java.util.HashMap" parameterType="list">
+        select
+        keyword,count(1) as total_num
+        from key_words_t
+        where file_sign = #{fileSign} and page_type = #{pageType} group by keyword order by count(1) desc limit #{num};
+    </select>
+</mapper>

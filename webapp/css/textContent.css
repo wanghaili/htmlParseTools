@@ -1,0 +1,173 @@
+.page-main{
+	width:90%;
+	margin:0 auto;
+	padding-bottom: 60px;
+}
+/*输入部分样式*/
+.main-input{
+	width:100%;
+	height:300px;
+	background: #F7F8F8;
+	box-shadow: 0 2px 2px #eee;
+	margin-top:15px;
+	padding:25px 40px;
+}
+.main-input .input-text{
+	width:100%;
+	height:200px;
+	outline: none;
+	overflow: auto;
+	padding: 10px;
+}
+.main-input .input-operate{
+	margin-top:20px;
+}
+.input-operate .input-upload{
+	display: inline-block;
+	height:30px;
+	line-height: 30px;
+}
+.input-upload form{
+	display: inline-block;
+}
+.input-upload .upload-btn{
+	margin-left:5px;
+}
+.input-operate .analysis-btn{
+	padding-top:5px;
+	padding-bottom:5px;
+	float: right;
+	vertical-align:top;
+}
+
+
+.main-result{
+	width:100%;
+	margin-top:30px;
+}
+.result-container{
+	width:100%;
+	margin-top:20px;
+	display: flex;
+}
+.result{
+	flex: 1;
+	-moz-box-flex: 1;
+	-ms-flex: 1;
+	-webkit-box-flex: 1;
+	margin-left:20px;
+}
+
+/*分析结果 每部分的title*/
+.result-title{
+	height:50px;
+	line-height: 50px;
+	background: #EAEAEA;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	padding:0px 15px;
+}
+/*文本预处理*/
+.text-deal-title .title-tip{
+	display: inline-block;
+	margin-left:50px;
+}
+.text-deal-title .menu-ul{
+	display: inline-block;
+	font-size:0px;
+	margin-bottom: 0px;
+	vertical-align: top;
+}
+.text-deal-title .menu-ul li{
+	display: inline-block;
+	padding:0px 15px;
+	height:28px;
+	line-height: 28px;
+	box-sizing: border-box;
+	background: white;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+}
+.menu-ul li:first-child{
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-right: none;
+}
+.menu-ul li:last-child{
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.menu-ul li a{
+	color:#333;
+}
+.menu-ul li.text-deal-active{
+	background: #0098E1;
+}
+.menu-ul li.text-deal-active a{
+	color:white;
+}
+
+.result-part{
+	padding: 20px;
+	margin-bottom:20px;
+	background: #F7F8F8;
+	box-shadow: 0 2px 2px #eee;
+}
+.result-splitwords-wrap,.result-stopwords-wrap{
+	display:flex;
+}
+.text-deal-result .result-wordmean{
+	width:230px;
+	margin-left:20px;
+}
+.text-deal-result .result-words{
+	flex:1;
+	-moz-box-flex: 1;
+	-ms-flex: 1;
+	-webkit-flex: 1;
+	-webkit-box-flex: 1;
+	max-height: 500px;
+	overflow-y:auto;
+}
+.text-deal-result dl dd{
+	padding:5px 10px;
+	display:inline-block;
+	margin-right: 10px;
+	margin-bottom:10px;
+}
+
+/*关键词提取*/
+.keywords-title input{
+	vertical-align: middle;
+	margin-left:30px;
+	height: 25px;
+	line-height:25px;
+}
+.keywords-title .keywords-btn{
+	height:25px;
+	margin-left:5px;
+	line-height: 25px;
+	vertical-align: middle;
+}
+
+.keywords-result{
+	overflow: hidden;
+}
+.keywords-result table td{
+	text-align: center;
+}
+.pre-keywords,.next-keywords{
+	margin-left:5%;
+}
+.pre-keywords table,.next-keywords table{
+	border:1px solid #bbb;
+}
+.pre-keywords table thead,.next-keywords table thead{
+	background: #0098E1;
+	color:white;
+}
+
+/*可视化展示*/
+.visual-result{
+	height:250px;
+}

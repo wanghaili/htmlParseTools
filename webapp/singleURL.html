@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>基于WEB挖掘的网页主题标签系统—单URL分析</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/analysis.css" />
+		<link rel="stylesheet" href="css/singleURL.css" />
+	</head>
+	<body>
+		<div class="page">
+			<header>
+				<div class="navbar">
+					<img src="images/logo.png" alt="LOGO"/>
+					<h1 class="title">基于WEB挖掘的网页主题标签系统</h1>
+					<ul class="nav-list">
+						<li class="txt"><a href="./index.html" title="首页">首页</a></li>
+						<li class="txt active"><a href="#" title="演示">演示</a></li>
+						<li class="txt"><a href="#" title="开发者">开发者</a></li>
+						<li class="nav-list-item sign-in"><a href="javascript:void(0)">登录</a></li>
+						<li class="nav-list-item sign-up"><a href="javascript:void(0)">注册</a></li>
+					</ul>
+				</div>
+			</header>
+			<div class="nav-menu">
+				<ul class="menu-list">
+					<li class="menu-active"><a href="#">单URL分析</a></li>
+					<li><a href="./dataCenter.html">批量URL分析</a></li>
+					<li><a href="./textContent.html">文本分析</a></li>
+				</ul>
+			</div>
+			<div class="page-main">
+				<div class="main-input">
+					<input type="text" name="input_text" value="http://news.ifeng.com/a/20160816/49787756_0.shtml"/>
+					<button type="button" class="my-btn input-btn">分析</button>
+				</div>
+				<div class="main-result">
+					<div class="divide">
+						<span>分析结果</span>
+						<div class="divide-line"></div>
+					</div>
+					<div class="result-container">
+						<div class="result-menu">
+							<ul>
+								<li class="li-title li-menu-active">
+									<a href="#pageType">
+										<img src="images/kind.png" alt="图片"/>
+										<span>网页类别分析</span>
+									</a>
+									<div class="line"></div>
+								</li>
+								<li class="li-title">
+									<a href="#pageContent">
+										<img src="images/textExtract.png" />
+										<span>网页信息抽取</span>
+									</a>
+									<div class="line"></div>
+								</li>
+								<li class="li-title textDeal-menu">
+									<a href="#textDeal">
+										<img src="images/textDeal.png" />
+										<span>文本预处理</span>
+									</a>
+									<div class="line"></div>
+								</li>
+								<li class="li-title keywords-menu">
+									<a href="#keywords">
+										<img src="images/keywords.png"/>
+										<span>关键词提取</span>
+									</a>
+									<div class="line"></div>
+								</li>
+								<li class="li-title entity-menu hidden">
+									<a href="#entity">
+										<img src="images/keywords.png"/>
+										<span>实体识别</span>
+									</a>
+									<div class="line"></div>
+								</li>
+								<li class="li-title">
+									<a href="#visualresult">
+										<img src="images/visual.png"/>
+										<span>可视化展示</span>
+									</a>
+									<div class="line"></div>
+								</li>
+							</ul>
+						</div>
+						<div class="result">
+							<div id="pageType">
+								<div class="result-title page-type-title">
+									<span>网页类别分析</span>
+								</div>
+								<div class="result-part page-type-result">
+									<table class="table">
+										<thead>
+											<tr>
+												<td width="60%">网页URL</td>		
+												<td width="20%">网页类型</td>
+												<td width="15%">操作</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="page-url">
+													<a href="http://news.ifeng.com/a/20160816/49787756_0.shtml" title="点击这里" target="_blank">
+														http://news.ifeng.com/a/20160816/49787756_0.shtml
+													</a>
+												</td>
+												<td class="page-type-td">新闻</td>
+												<td>
+													<a href="javascript:void(0)" class="change-type">修正</a>
+													<a href="javascript:void(0)" class="analysis-link">分析</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div id="pageContent">
+								<div class="result-title page-content-title">
+									<span>网页信息抽取：</span>
+									<span class="page-content-tip"></span>
+									<!--<ul class="content-menu-ul">-->
+										<!--<li class="page-content-active">全部</li>-->
+										<!--<li>title</li>-->
+										<!--<li>meta data</li>-->
+										<!--<li>正文</li>-->
+									<!--</ul>-->
+									<!--<ul class="content-menu-ul hidden">-->
+										<!--<li class="page-content-active">全部</li>-->
+										<!--<li>title</li>-->
+										<!--<li>meta data</li>-->
+									<!--</ul>-->
+								</div>
+								<div class="result-part page-content-result">
+									
+								</div>
+							</div>
+							<div id="textDeal">
+								<div class="result-title text-deal-title">
+									<span>文本预处理</span>
+									<span class="title-tip">处理结果：</span>
+									<ul class="menu-ul">
+										<li data-sign="分词" class="text-deal-active"><a href="javascript:void(0)" data-value="splitwords">分词结果</a></li>
+										<li data-sign="停用词"><a href="javascript:void(0)" data-value="stopwords">停用词结果</a></li>
+									</ul>
+								</div>
+								<div class="result-part text-deal-result">
+									<div class="result-splitwords-wrap">
+										<div class="result-words">
+											<dl id="splitwords">
+												<dd class="n">主题</dd>
+												<dd class="n">特征</dd>
+												<dd class="v">选择</dd>
+												<dd class="d">主要</dd>
+												<br />
+												<dd class="vshi">是</dd>
+												<dd class="p">通过</dd>
+												<dd class="n">阈值</dd>
+												<dd class="vn">比较</dd>
+												<dd class="vx">进行</dd>
+												<dd class="n">特征</dd>
+												<dd class="vn">选择</dd>
+											</dl>
+										</div>
+										<div class="result-wordmean">
+											<dl id="wordmean">
+												<dt>词性类别图示：</dt>
+												<dd class="v">动词</dd>
+												<dd class="n">名词</dd>
+												<dd class="a">形容词</dd>
+												<dd class="d">副词</dd>
+												<dd class="r">代词</dd>
+												<dd class="u">助词</dd>
+												<dd class="w">标点符号</dd>
+												<dd class="p">介词</dd>
+												<dd class="c">连词</dd>
+												<dd class="q">量词</dd>
+												<dd class="m">数词</dd>
+											</dl>
+										</div>
+									</div>
+									<div class="result-stopwords-wrap hidden">
+										<div class="result-words">
+											<dl id="stopwords">
+												<dd class="n">主题</dd>
+												<dd class="n">特征</dd>
+												<dd class="v">选择</dd>
+												<dd class="d">主要</dd>
+												<br />
+												<dd class="vshi">是</dd>
+												<dd class="p">通过</dd>
+												<dd class="n">阈值</dd>
+												<dd class="vn">比较</dd>
+												<dd class="vx">进行</dd>
+												<dd class="n">特征</dd>
+												<dd class="vn">选择</dd>
+											</dl>
+										</div>
+										<div class="result-wordmean">
+											<dl id="stopwordmean">
+												<dt>词性类别图示：</dt>
+												<dd class="v">动词</dd>
+												<dd class="n">名词</dd>
+												<dd class="a">形容词</dd>
+												<dd class="d">副词</dd>
+												<dd class="r">代词</dd>
+												<dd class="u">助词</dd>
+												<dd class="w">标点符号</dd>
+												<dd class="p">介词</dd>
+												<dd class="c">连词</dd>
+												<dd class="q">量词</dd>
+												<dd class="m">数词</dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="keywords">
+								<div class="result-title keywords-title">
+									<span>关键词提取</span>
+									<input type="text" name="keywords_input" placeholder="请输入关键词个数" />
+									<button class="my-btn keywords-btn">确定</button>
+								</div>
+								<div class="result-part keywords-result">
+									<div class="col-xs-5 pre-keywords">
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<td>关键词</td>
+													<td>权重</td>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>关键词</td>
+													<td>89</td>
+												</tr>
+												<tr>
+													<td>关键词</td>
+													<td>80</td>
+												</tr>
+												<tr>
+													<td>关键词</td>
+													<td>76</td>
+												</tr>
+												<tr>
+													<td>关键词</td>
+													<td>65</td>
+												</tr>
+												<tr>
+													<td>关键词</td>
+													<td>64</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="col-xs-5 next-keywords">
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<td>关键词</td>
+													<td>权重</td>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>关键词</td>
+													<td>89</td>
+												</tr>
+												<tr>
+													<td>关键词</td>
+													<td>80</td>
+												</tr>
+												<tr>
+													<td>关键词</td>
+													<td>76</td>
+												</tr>
+												<tr>
+													<td>关键词</td>
+													<td>65</td>
+												</tr>
+												<tr>
+													<td>关键词</td>
+													<td>64</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div id="entity" class="hidden">
+								<div class="result-title">
+									<span>实体识别</span>
+								</div>
+								<div class="result-part entity-result">
+									<div class="result-entity">
+
+									</div>
+									<div class="result-entity-mean">
+										<dl>
+											<dt>实体识别图示:</dt>
+											<dd class="shop_name">商品名</dd>
+											<dd class="brand">品牌名</dd>
+										</dl>
+										<div class="export-wrap">
+											<form id="myexport" action="tools/uploadEntity" method="post" enctype="multipart/form-data">
+												<input type="file" name="file_upload" class="export-upload hidden"/>
+												<input type="text" name="export_input" class="export-input" />
+											</form>
+											<button type="button" class="my-btn export-btn">导入</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="visualresult">
+								<div class="result-title visual-title">
+									<span>可视化展示</span>
+								</div>
+								<div class="result-part visual-result" id="visual-display-result">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<p>Copyright 2016-2017  所有京ICP证15065619号  京公网安备110105005360号</p>
+			</footer>
+			<div class="dialog hidden">
+				<div class="dialog-wrap">
+					<p class="dialog-header">修正网页类别</p>
+					<div class="dialog-main">
+						<div class="dialog-row">
+							<label class="col-xs-4">原类别：</label>
+							<span class="origin-type"></span>
+						</div>
+						<div class="dialog-row">
+							<label class="col-xs-4">网页类别：</label>
+							<div class="col-xs-8 page-type-wrap">
+								<label class="label-type">
+									<input type="radio" name="page_type" value="新闻"/>新闻类
+								</label>
+								<label class="label-type">
+									<input type="radio" name="page_type" value="视频"/>视频类
+								</label>
+								<label class="label-type">
+									<input type="radio" name="page_type" value="电商"/>电商类
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="dialog-footer">
+						<button type="button" class="my-btn okBtn">确定</button>
+						<button type="button" class="my-btn cancleBtn">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<script type="text/javascript" src="scripts/jquery.min.js" ></script>
+		<script type="text/javascript" src="scripts/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="scripts/jquery.form.js" ></script>
+		<script type="text/javascript" src="scripts/ajax.js" ></script>
+		<script type="text/javascript" src="scripts/dist/echarts.js" ></script>
+		<script type="text/javascript" src="scripts/wordmean.js"></script>
+		<script type="text/javascript" src="scripts/singleURL.js" ></script>	
+	</body>
+</html>

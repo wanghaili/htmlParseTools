@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="HtmlParserRecordMapper">
+
+    <resultMap id="BaseResultMap" type="cn.edu.bupt.rsx.htmlparser.model.HtmlParserRecord">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="url" property="url" jdbcType="VARCHAR"/>
+        <result column="description" property="description" jdbcType="VARCHAR"/>
+        <result column="content" property="content" jdbcType="LONGVARCHAR"/>
+        <result column="keywords" property="keyWords" jdbcType="VARCHAR"/>
+        <result column="type" property="type" jdbcType="VARCHAR"/>
+        <result column="keywords_map" property="keyWordsMap" jdbcType="LONGVARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="BIGINT"/>
+        <result column="modify_time" property="modifiTime" jdbcType="BIGINT"/>
+        <result column="file_sign" property="fileSign" jdbcType="BIGINT"/>
+    </resultMap>
+
+<sql id="Base_Column_List">
+    id, title, url, description, content, keywords, type, create_time, modify_time,keywords_map,file_sign
+  </sql>
+
+    <insert id="insert" parameterType="cn.edu.bupt.rsx.htmlparser.model.HtmlParserRecord" keyProperty="id"
+            useGeneratedKeys="true">
+        insert into html_parser_record_t (
+        <include refid="Base_Column_List"/>
+        )
+        values (
+        #{id},
+        #{title},
+        #{url},
+        #{description},
+        #{content},
+        #{keyWords},
+        #{type},
+        #{createTime},
+        #{modifiTime},
+        #{keyWordsMap},
+        #{fileSign}
+        )
+    </insert>
+
+    <insert id="insertList" useGeneratedKeys="true" parameterType="java.util.List">
+        <selectKey keyProperty="id" order="AFTER"
+                   resultType="long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into html_parser_record_t (title, url, description, content, keywords, type, create_time,modify_time,keywords_map,file_sign)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.title},
+            #{item.url},
+            #{item.description},
+            #{item.content},
+            #{item.keyWords},
+            #{item.type},
+            #{item.createTime},
+            #{item.modifiTime},
+            #{item.keyWordsMap},
+            #{item.fileSign})
+        </foreach>
+    </insert>
+
+    <delete id="deleteById" parameterType="long">
+  	delete from html_parser_record_t where id = #{id}
+  </delete>
+
+    <select id="selectById" resultMap="BaseResultMap" parameterType="long">
+        select
+        <include refid="Base_Column_List"/>
+        from html_parser_record_t where id = #{id}
+    </select>
+    <update id="updateById" parameterType="cn.edu.bupt.rsx.htmlparser.model.HtmlParserRecord">
+        update html_parser_record_t
+        <set>
+            <if test="title != null">
+                title = #{title},
+            </if>
+            <if test="url != null">
+                url = #{url},
+            </if>
+            <if test="description != null">
+                description = #{description},
+            </if>
+            <if test="content != null">
+                content = #{content},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+            <if test="fileSign != null">
+                file_sign = #{fileSign},
+            </if>
+            <if test="keyWords != null">
+                keywords = #{keyWords},
+            </if>
+            <if test="createTime != 0">
+                create_time = #{createTime},
+            </if>
+            <if test="keyWordsMap != null">
+                keywords_map = #{keyWordsMap},
+            </if>
+            <if test="modifiTime != 0">
+                modify_time = #{modifiTime}
+            </if>
+        </set>
+        where
+        id = #{id}
+    </update>
+    <select id="selectByIdList" resultMap="BaseResultMap" parameterType="list">
+        select
+        <include refid="Base_Column_List"/>
+        from html_parser_record_t where id in
+        <foreach collection="list" open="(" separator="," close=")" item="id">
+            #{id}
+        </foreach>
+    </select>
+
+    <select id="queryListByParams" resultMap="BaseResultMap" parameterType="list">
+        select
+        <include refid="Base_Column_List"/>
+        from html_parser_record_t
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="title != null">
+                and title = #{title}
+            </if>
+            <if test="description != null">
+                and description = #{description}
+            </if>
+            <if test="url != null">
+                and url = #{url}
+            </if>
+            <if test="content != null">
+                and content = #{content}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="fileSign != null">
+                and file_sign = #{fileSign}
+            </if>
+            <if test="keyWord != null">
+                and keywords = #{keyWord}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="modifiTime != null">
+                and modify_time = #{modifiTime}
+            </if>
+        </where>
+    </select>
+
+    <select id="queryCountNum" resultType="java.util.HashMap" parameterType="String">
+        select
+        type,count(type) as total_num
+        from html_parser_record_t
+        where file_sign = #{fileId} group by type
+    </select>
+
+    <select id="queryListByParamsLimit" resultMap="BaseResultMap" parameterType="list">
+        select
+        <include refid="Base_Column_List"/>
+        from html_parser_record_t
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="title != null">
+                and title = #{title}
+            </if>
+            <if test="description != null">
+                and description = #{description}
+            </if>
+            <if test="url != null">
+                and url = #{url}
+            </if>
+            <if test="content != null">
+                and content = #{content}
+            </if>
+            <if test="type != null">
+                and type = #{type}
+            </if>
+            <if test="fileSign != null">
+                and file_sign = #{fileSign}
+            </if>
+            <if test="keyWord != null">
+                and keywords = #{keyWord}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="modifiTime != null">
+                and modify_time = #{modifiTime}
+            </if>
+        </where>
+        limit #{pageNum},#{pageSize}
+    </select>
+</mapper>

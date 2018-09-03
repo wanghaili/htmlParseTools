@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>基于WEB挖掘的网页主题标签系统—批量URL分析</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/webCategory.css" />
+</head>
+<body>
+<div class="page">
+    <header>
+        <div class="navbar">
+            <img src="images/logo.png" alt="LOGO"/>
+            <h1 class="title">基于WEB挖掘的网页主题标签系统</h1>
+            <ul class="nav-list">
+                <li class="txt"><a href="./index.html" title="首页">首页</a></li>
+                <li class="txt active"><a href="#" title="演示">演示</a></li>
+                <li class="txt"><a href="#" title="开发者">开发者</a></li>
+                <li class="nav-list-item sign-in"><a href="javascript:void(0)">登录</a></li>
+                <li class="nav-list-item sign-up"><a href="javascript:void(0)">注册</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="nav-menu">
+        <ul class="menu-list">
+            <li><a href="./singleURL.html">单URL分析</a></li>
+            <li  class="menu-active"><a href="#">批量URL分析</a></li>
+            <li><a href="./textContent.html">文本分析</a></li>
+        </ul>
+    </div>
+    <div class="page-main">
+        <div class="result-container">
+            <div class="result-menu">
+                <ul>
+                    <li class="li-title">
+                        <a href="./dataCenter.html">
+                            <img src="images/kind.png" alt="图片"/>
+                            <span>数据中心</span>
+                        </a>
+                        <div class="line"></div>
+                    </li>
+                    <li class="li-title li-menu-active">
+                        <a href="javascript:void(0)">
+                            <img src="images/textExtract.png" />
+                            <span>网页类别分析</span>
+                        </a>
+                        <div class="line"></div>
+                    </li>
+                    <li class="li-title">
+                        <a href="./webKeyWords.html">
+                            <img src="images/textDeal.png" />
+                            <span>网页主题标签</span>
+                        </a>
+                        <div class="line"></div>
+                    </li>
+                    <li class="li-title">
+                        <a href="./dataResult.html">
+                            <img src="images/keywords.png"/>
+                            <span>数据结果分析</span>
+                        </a>
+                        <div class="line"></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="result">
+                <div class="page-type">
+                    <div class="result-part data-source">
+                        <select class="form-control" id="data-source">
+                            <!--<option>蓝汛CDN17:00-18:00服务器日志数据</option>-->
+                            <!--<option>蓝汛CDN17:00-18:00服务器日志数据</option>-->
+                            <!--<option>蓝汛CDN17:00-18:00服务器日志数据</option>-->
+                        </select>
+                        <button type="button" class="my-btn data-source-btn">选择数据源</button>
+                    </div>
+                    <div class="result-part page-type-result">
+                        <!--<p>分析进度:已完成<strong class="complete-num">9293</strong>个,共计<strong>9293</strong>个</p>-->
+                        <!--<p>新闻类<strong>5672</strong>个,视频类<strong>0</strong>个,电商类<strong>3621</strong>个</p>-->
+                        <div class="table-wrap">
+                            <div class="header">
+                                <label>筛选网页:</label>
+                                <select class="form-control">
+                                    <option value="0">未识别</option>
+                                    <option value="1">已识别</option>
+                                    <option value="2">全部</option>
+                                </select>
+                                <button type="button" class="my-btn select-web-btn">确定</button>
+                            </div>
+                            <table class="table table-hover table-bordered page-type-table">
+                                <thead>
+                                    <tr>
+                                        <th>网页URL</th>
+                                        <th>网页类型</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="urlListTbody">
+                                    <!--<tr>-->
+                                        <!--<td>-->
+                                            <!--<a href="http://news.ifeng.com/a/20160816/49787756_0.shtml" title="点击这里" target="_blank">-->
+                                                <!--http://news.ifeng.com/a/20160816/49787756_0.shtmlhttp://news.ifeng.com/a/20160816/49787756_0.shtml-->
+                                            <!--</a>-->
+                                        <!--</td>-->
+                                        <!--<td>新闻类</td>-->
+                                        <!--<td>-->
+                                            <!--<a href="javascript:void(0)" title="修正网页" class="change-type">修正</a>-->
+                                        <!--</td>-->
+                                    <!--</tr>-->
+                                </tbody>
+                            </table>
+                            <div class="footer">
+                                <p class="pagination">
+                                    共计<strong>10</strong>个,跳转至
+                                    <input type="number" class="page-num" value="1">页
+                                    <button type="button" class="my-btn pagination-btn">确定</button>
+                                </p>
+                                <div class="action-wrap">
+                                    <button class="my-btn saveAndAnalysis" type="button">保存并分析</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<footer>-->
+        <!--<p>Copyright 2016-2017  所有京ICP证15065619号  京公网安备110105005360号</p>-->
+    <!--</footer>-->
+    <div class="dialog hidden">
+        <div class="dialog-wrap">
+            <p class="dialog-header">修正网页类别</p>
+            <div class="dialog-main">
+                <div class="dialog-row">
+                    <label class="col-xs-4">原类别：</label>
+                    <span class="origin-type"></span>
+                </div>
+                <div class="dialog-row">
+                    <label class="col-xs-4">网页类别：</label>
+                    <div class="col-xs-8 page-type-wrap">
+                        <label class="label-type">
+                            <input type="radio" name="page_type" value="新闻"/>新闻类
+                        </label>
+                        <label class="label-type">
+                            <input type="radio" name="page_type" value="视频"/>视频类
+                        </label>
+                        <label class="label-type">
+                            <input type="radio" name="page_type" value="电商"/>电商类
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-footer">
+                <button type="button" class="my-btn okBtn">确定</button>
+                <button type="button" class="my-btn cancleBtn">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/bootstrap.min.js" ></script>
+<script type="text/javascript" src="scripts/jquery.form.js" ></script>
+<script type="text/javascript" src="scripts/ajax.js" ></script>
+<script type="text/javascript" src="scripts/dist/echarts.js" ></script>
+<script type="text/javascript" src="scripts/webCategory.js"></script>
+</body>
+</html>
+

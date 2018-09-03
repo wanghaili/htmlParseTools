@@ -1,0 +1,140 @@
+.page-main{
+    width:90%;
+    margin:0 auto;
+    padding-bottom: 60px;
+}
+
+.result-container{
+    width:100%;
+    margin-top:20px;
+    display: flex;
+}
+.result{
+    flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+    margin-left:20px;
+}
+.result-part{
+    padding: 20px;
+    margin-bottom:20px;
+    background: #F7F8F8;
+    box-shadow: 0 2px 2px #eee;
+}
+
+
+.page-type .data-source{
+    padding: 25px 60px;
+}
+.data-source .form-control{
+    display: inline-block;
+    width:350px;
+    height: 30px;
+}
+.data-source .data-source-btn{
+    padding:5px 15px;
+    margin-left: 10px;
+}
+
+.table-wrap{
+    margin-top: 50px;
+}
+.table-wrap .header{
+    margin-bottom: 20px;
+}
+.header .form-control{
+    width: 350px;
+    height: 30px;
+    display: inline-block;
+}
+.header .select-web-btn{
+    padding: 5px 15px;
+    margin-left: 10px;
+}
+.table-wrap .table{
+    margin-bottom: 30px;
+}
+.table-wrap .page-type-table td{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 570px;
+}
+.footer{
+    position: relative;
+}
+.footer .pagination{
+    margin:0px;
+}
+.footer p{
+    margin:0px;
+}
+.footer .pagination .pagination-btn{
+    padding: 1px 12px;
+}
+.footer .action-wrap{
+    display: inline-block;
+    position: absolute;
+    right:0px;
+}
+.action-wrap .saveAndAnalysis{
+    padding: 5px 15px;
+}
+
+/*修正弹窗*/
+.dialog{
+    width:100%;
+    position: fixed;
+    top:0px;
+    left:0px;
+    background-color: rgba(0,0,0,0.3);
+}
+.dialog .dialog-wrap{
+    width:430px;
+    position: absolute;
+    top:300px;
+    left:450px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+.dialog-wrap .dialog-header{
+    padding: 5px 5px;
+    border-bottom:1px solid #ccc;
+    margin-bottom:0px;
+}
+.dialog-wrap .dialog-main{
+    padding:10px 10px;
+}
+.dialog-wrap .dialog-row{
+    overflow: hidden;
+    margin-top: 10px;
+}
+.dialog-row >label{
+    text-align: right;
+}
+.dialog-row .page-type-wrap{
+    padding-left: 0px;
+}
+.dialog-row input{
+    margin-right:5px;
+}
+.dialog-row .label-type{
+    margin-right:18px;
+}
+
+.dialog-wrap .dialog-footer{
+    text-align: center;
+    margin-top:40px;
+    margin-bottom: 20px;
+}
+.dialog-footer button{
+    padding: 3px 15px;
+}
+.dialog-footer button:first-child{
+    margin-right:60px;
+}
+.dialog-footer button:last-child{
+    background: #BBBBBB;
+    color:#000;
+}

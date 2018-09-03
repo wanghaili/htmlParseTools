@@ -1,0 +1,320 @@
+.page-main{
+	width:90%;
+	margin:0 auto;
+	padding-bottom: 60px;
+}
+/*单URL分析输入样式*/
+.main-input{
+	width:100%;
+	height:80px;
+	background: #F7F8F8;
+	box-shadow: 0 2px 2px #eee;
+	margin-top:15px;
+	padding:25px 40px;
+}
+.main-input input{
+	width:90%;
+}
+.main-input .input-btn{
+	padding-top:5px;
+	padding-bottom: 5px;
+	margin-left: 10px;	
+}
+
+.main-result{
+	width:100%;
+	margin-top:30px;
+}
+
+.result-container{
+	width:100%;
+	margin-top:20px;
+	display: flex;
+}
+.result{
+	flex: 1;
+	-moz-box-flex: 1;
+	-ms-flex: 1;
+	-webkit-box-flex: 1;
+	margin-left:20px;
+}
+
+/*分析结果 每部分的title*/
+.result-title{
+	height:50px;
+	line-height: 50px;
+	background: #EAEAEA;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	padding:0px 15px;
+}
+
+/*网页类别分析*/
+.page-type-result td{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width:670px;
+}
+/*文本预处理*/
+.text-deal-title .title-tip{
+	display: inline-block;
+	margin-left:50px;
+}
+.text-deal-title .menu-ul{
+	display: inline-block;
+	font-size:0px;
+	margin-bottom: 0px;
+	vertical-align: top;
+}
+.text-deal-title .menu-ul li{
+	display: inline-block;
+	padding:0px 15px;
+	height:28px;
+	line-height: 28px;
+	box-sizing: border-box;
+	background: white;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+}
+.menu-ul li:first-child{
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-right: none;
+}
+.menu-ul li:last-child{
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.menu-ul li a{
+	color:#333;
+}
+.menu-ul li.text-deal-active{
+	background: #0098E1;
+}
+.menu-ul li.text-deal-active a{
+	color:white;
+}
+
+.result-part{
+	padding: 20px;
+	margin-bottom:20px;
+	background: #F7F8F8;
+	box-shadow: 0 2px 2px #eee;
+}
+
+.result-splitwords-wrap,.result-stopwords-wrap{
+	display:flex;
+}
+.text-deal-result .result-wordmean{
+	width:230px;
+	margin-left:20px;
+}
+.text-deal-result .result-words{
+	flex:1;
+	-moz-box-flex: 1;
+	-ms-flex: 1;
+	-webkit-flex: 1;
+	-webkit-box-flex: 1;
+	max-height: 500px;
+	overflow-y:auto;
+}
+.text-deal-result dl dd{
+	padding:5px 10px;
+	display:inline-block;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+/*关键词提取*/
+.keywords-title input{
+	vertical-align: middle;
+	margin-left:30px;
+	height: 25px;
+}
+.keywords-title .keywords-btn{
+	height:25px;
+	line-height: 25px;
+	margin-left:5px;
+	vertical-align: middle;
+}
+
+.keywords-result{
+	overflow: hidden;
+}
+.keywords-result table td{
+	text-align: center;
+}
+.pre-keywords,.next-keywords{
+	margin-left:5%;
+}
+.pre-keywords table,.next-keywords table{
+	border:1px solid #bbb;
+}
+.pre-keywords table thead,.next-keywords table thead{
+	background: #0098E1;
+	color:white;
+}
+/*实体识别*/
+.entity-result{
+	display: flex;
+}
+
+.entity-result .result-entity-mean{
+	width:250px;
+	margin-left:20px;
+}
+.entity-result .result-entity{
+	flex: 1;
+	-ms-flex: 1;
+	-moz-box-flex: 1;
+	-webkit-box-flex: 1;
+	-o-flex:1;
+	height:150px;
+	max-height:300px;
+	overflow-y: auto;
+}
+
+.entity-result dd,.entity-result span{
+	padding:5px 10px;
+	display:inline-block;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.entity-result span{
+	margin-right: 0px;
+}
+.result-entity-mean dt{
+	margin-bottom:20px;
+}
+/*导入实体库*/
+.result-entity-mean .export-wrap{
+	margin-top:40px;
+}
+.export-wrap form{
+	display: inline-block;
+}
+.export-wrap .export-btn{
+	padding:5px 15px;
+}
+
+/*实体识别图示*/
+
+.entity-result .shop_name{
+	background-color: #5DE2DE;
+}
+.entity-result .brand{
+	background-color: #f0ad4e;
+}
+
+/*可视化展示*/
+.visual-result{
+	height:250px;
+}
+
+/*网页类别分析*/
+.page-type-result table a{
+	color:#0098E1;
+}
+.page-type-result table tbody tr td:last-child a{
+	margin-right:15px;
+}
+
+/*网页信息抽取*/
+.page-content-title .content-menu-ul{
+	display: inline-block;
+	font-size:0px;
+	margin-bottom: 0px;
+	vertical-align: top;
+	float:right;
+	margin-right:15px;
+}
+.page-content-title .content-menu-ul li{
+	display: inline-block;
+	padding:0px 15px;
+	height:28px;
+	line-height: 28px;
+	box-sizing: border-box;
+	background: white;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+	cursor: pointer;
+}
+.content-menu-ul li:first-child{
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-right: none;
+}
+.content-menu-ul li:last-child{
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.content-menu-ul li a{
+	color:#333;
+}
+.content-menu-ul li.page-content-active{
+	background: #0098E1;
+	color:white;
+}
+
+.page-content-result{
+	max-height: 400px;
+	padding:20px;
+	overflow: auto;
+}
+/*修正网页类别*/
+.dialog{
+	width:100%;
+	position: fixed;
+	top:0px;
+	left:0px;
+	background-color: rgba(0,0,0,0.3);
+}
+.dialog .dialog-wrap{
+	width:430px;
+	position: absolute;
+	top:300px;
+	left:450px;
+	background: #fff;
+	border: 1px solid #ddd;
+}
+.dialog-wrap .dialog-header{
+	padding: 5px 5px;
+	border-bottom:1px solid #ccc;
+	margin-bottom:0px;
+}
+.dialog-wrap .dialog-main{
+	padding:10px 10px;
+}
+.dialog-wrap .dialog-row{
+	overflow: hidden;
+	margin-top: 10px;
+}
+.dialog-row >label{
+	text-align: right;
+}
+.dialog-row .page-type-wrap{
+	padding-left: 0px;
+}
+.dialog-row input{
+	margin-right:5px;
+}
+.dialog-row .label-type{
+	margin-right:18px;
+}
+
+.dialog-wrap .dialog-footer{
+	text-align: center;
+	margin-top:40px;
+	margin-bottom: 20px;
+}
+.dialog-footer button{
+	padding: 3px 15px;
+}
+.dialog-footer button:first-child{
+	margin-right:60px;
+}
+.dialog-footer button:last-child{
+	background: #BBBBBB;
+	color:#000;
+}

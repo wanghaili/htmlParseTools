@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="WebPageFeatureMapper">
+
+    <resultMap id="BaseResultMap" type="cn.edu.bupt.rsx.htmlparser.model.WebPageFeature">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="url" property="url" jdbcType="VARCHAR"/>
+        <result column="slash_num" property="slashNum" jdbcType="INTEGER"/>
+        <result column="no_link_ratio" property="noLinkRatio" jdbcType="DOUBLE"/>
+        <result column="punctuation_ratio" property="punctuationRatio" jdbcType="DOUBLE"/>
+        <result column="text_link_ratio" property="textLinkRatio" jdbcType="DOUBLE"/>
+        <result column="type" property="type" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="BIGINT"/>
+        <result column="update_time" property="updateTime" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    id, url, slash_num, no_link_ratio, punctuation_ratio, text_link_ratio, type, create_time, update_time
+  </sql>
+
+    <insert id="insert" parameterType="cn.edu.bupt.rsx.htmlparser.model.WebPageFeature" keyProperty="id"
+            useGeneratedKeys="true">
+        insert into web_page_feature_t (
+        <include refid="Base_Column_List"/>
+        )
+        values (
+        #{id},
+        #{url},
+        #{slashNum},
+        #{noLinkRatio},
+        #{punctuationRatio},
+        #{textLinkRatio},
+        #{type},
+        #{createTime},
+        #{updateTime}
+        )
+    </insert>
+
+    <delete id="deleteById" parameterType="long">
+  	delete from web_page_feature_t where id = #{id}
+  </delete>
+
+    <select id="selectById" resultMap="BaseResultMap" parameterType="long">
+        select
+        <include refid="Base_Column_List"/>
+        from web_page_feature_t where id = #{id}
+    </select>
+    <select id="queryByUrl" resultMap="BaseResultMap" parameterType="String">
+        select
+        <include refid="Base_Column_List"/>
+        from web_page_feature_t where url = #{url}
+    </select>
+    <update id="updateById" parameterType="cn.edu.bupt.rsx.htmlparser.model.WebPageFeature">
+        update html_parser_record_t
+        <set>
+            <if test="url != null">
+                url = #{url},
+            </if>
+            <if test="slashNum != null">
+                slash_num = #{slashNum},
+            </if>
+            <if test="noLinkRatio != null">
+                no_link_ratio = #{noLinkRatio},
+            </if>
+            <if test="textLinkRatio != null">
+                text_link_ratio = #{textLinkRatio},
+            </if>
+            <if test="type != null">
+                type = #{type},
+            </if>
+            <if test="createTime != null">
+                create_time = #{updateTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime}
+            </if>
+        </set>
+        where
+        id = #{id}
+    </update>
+    <select id="selectByIdList" resultMap="BaseResultMap" parameterType="list">
+        select
+        <include refid="Base_Column_List"/>
+        from web_page_feature_t where id in
+        <foreach collection="list" open="(" separator="," close=")" item="id">
+            #{id}
+        </foreach>
+    </select>
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from web_page_feature_t
+    </select>
+    <select id="queryListByParams" resultMap="BaseResultMap" parameterType="list">
+        select
+        <include refid="Base_Column_List"/>
+        from web_page_feature_t
+        <where>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="url != null">
+                and url = #{url},
+            </if>
+            <if test="slashNum != null">
+                and slash_num = #{slashNum},
+            </if>
+            <if test="noLinkRatio != null">
+                and no_link_ratio = #{noLinkRatio},
+            </if>
+            <if test="textLinkRatio != null">
+                and text_link_ratio = #{textLinkRatio},
+            </if>
+            <if test="type != null">
+                and type = #{type},
+            </if>
+            <if test="createTime != null">
+                and create_time = #{updateTime},
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+        </where>
+    </select>
+</mapper>

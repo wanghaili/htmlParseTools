@@ -1,0 +1,32 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "microsoft yahei";
+	font-size: 14px;
+}
+a,a:link,a:visited,a:hover,a:active{
+	text-decoration: none;
+}
+
+ul,li{
+	list-style: none;
+}
+.hidden{
+	display:none;
+}
+.my-btn{
+	padding:0px 15px;
+	border: none;
+	background: #0098E1;
+	color:white;
+	border-radius: 3px;
+	outline:none;
+}
+input[type=text],input[type=password]{
+	padding:3px 5px;
+	display: inline-block;
+	border-radius: 4px;
+	outline: none;
+	border:1px solid #ccc;
+	height:30px;
+}

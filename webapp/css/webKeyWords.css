@@ -1,0 +1,72 @@
+.page-main{
+    width:90%;
+    margin:0 auto;
+    padding-bottom: 60px;
+}
+
+.result-container{
+    width:100%;
+    margin-top:20px;
+    display: flex;
+}
+.result{
+    flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+    margin-left:20px;
+}
+.result-part{
+    padding: 20px;
+    margin-bottom:20px;
+    background: #F7F8F8;
+    box-shadow: 0 2px 2px #eee;
+}
+
+/*选择数据源*/
+.key-words .data-source{
+    padding: 25px 60px;
+}
+.key-words .form-control{
+    display: inline-block;
+    width:350px;
+    height: 30px;
+}
+.key-words .data-source-btn{
+    padding:5px 15px;
+    margin-left: 10px;
+}
+
+/*网页主题标签结果*/
+.keyWords-view{
+    margin-bottom: 30px;
+}
+.keyWords-view .header .form-control{
+    display: inline-block;
+    width:300px;
+    height: 30px;
+}
+.keyWords-view .header .keyWords-view-btn{
+    padding: 5px 15px;
+    margin-left: 10px;
+}
+.keyWords-view .view-result{
+    height:500px;
+    margin-top:20px;
+}
+
+.keyWords-table .header{
+    margin-bottom: 15px;
+}
+.keyWords-table .header .keyWords-input{
+    width:300px;
+}
+.keyWords-table .header .keyWords-search{
+    padding:5px 15px;
+}
+/*.keyWords-table .table-wrap td{*/
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+    /*white-space: nowrap;*/
+    /*min-width: 400px;*/
+/*}*/

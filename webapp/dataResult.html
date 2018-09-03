@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>基于WEB挖掘的网页主题标签系统—批量URL分析</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/dataResult.css" />
+</head>
+<body>
+<div class="page">
+    <header>
+        <div class="navbar">
+            <img src="images/logo.png" alt="LOGO"/>
+            <h1 class="title">基于WEB挖掘的网页主题标签系统</h1>
+            <ul class="nav-list">
+                <li class="txt"><a href="./index.html" title="首页">首页</a></li>
+                <li class="txt active"><a href="#" title="演示">演示</a></li>
+                <li class="txt"><a href="#" title="开发者">开发者</a></li>
+                <li class="nav-list-item sign-in"><a href="javascript:void(0)">登录</a></li>
+                <li class="nav-list-item sign-up"><a href="javascript:void(0)">注册</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="nav-menu">
+        <ul class="menu-list">
+            <li><a href="./singleURL.html">单URL分析</a></li>
+            <li  class="menu-active"><a href="#">批量URL分析</a></li>
+            <li><a href="./textContent.html">文本分析</a></li>
+        </ul>
+    </div>
+    <div class="page-main">
+        <div class="result-container">
+            <div class="result-menu">
+                <ul>
+                    <li class="li-title">
+                        <a href="./dataCenter.html">
+                            <img src="images/kind.png" alt="图片"/>
+                            <span>数据中心</span>
+                        </a>
+                        <div class="line"></div>
+                    </li>
+                    <li class="li-title">
+                        <a href="./webCategory.html">
+                            <img src="images/textExtract.png" />
+                            <span>网页类别分析</span>
+                        </a>
+                        <div class="line"></div>
+                    </li>
+                    <li class="li-title">
+                        <a href="./webKeyWords.html">
+                            <img src="images/textDeal.png" />
+                            <span>网页主题标签</span>
+                        </a>
+                        <div class="line"></div>
+                    </li>
+                    <li class="li-title li-menu-active">
+                        <a href="javascript:void(0)">
+                            <img src="images/keywords.png"/>
+                            <span>数据结果分析</span>
+                        </a>
+                        <div class="line"></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="result">
+                <div class="data-result">
+                    <div class="result-part data-source">
+                        <select class="form-control" id="data-source">
+                            <!--<option>蓝汛CDN17:00-18:00服务器日志数据</option>-->
+                            <!--<option>蓝汛CDN17:00-18:00服务器日志数据</option>-->
+                            <!--<option>蓝汛CDN17:00-18:00服务器日志数据</option>-->
+                        </select>
+                        <button type="button" class="my-btn data-source-btn">选择数据源</button>
+                    </div>
+                </div>
+                <div class="result-part data-analysis-result">
+                    <div class="view-wrap" id="first-view">
+
+                    </div>
+                    <div class="view-wrap" id="second-view">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<footer>-->
+    <!--<p>Copyright 2016-2017  所有京ICP证15065619号  京公网安备110105005360号</p>-->
+    <!--</footer>-->
+</div>
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/bootstrap.min.js" ></script>
+<script type="text/javascript" src="scripts/jquery.form.js" ></script>
+<script type="text/javascript" src="scripts/ajax.js" ></script>
+<script type="text/javascript" src="scripts/dist/echarts.js" ></script>
+<script type="text/javascript" src="scripts/dataResult.js"></script>
+</body>
+</html>
+

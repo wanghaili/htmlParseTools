@@ -1,0 +1,105 @@
+
+.a,.ad{
+	background-color:#D07F7F;          /*形容词   副形词*/
+}
+.an{
+	background-color:#4B5BCE;         /*名形词*/
+}
+.Ag{
+	background-color:#E6E683;         /*形语素*/
+}
+.b{                                   /*区别词*/
+	background-color:#A1B5C3;
+}
+.c{                                   /*连词*/
+	background-color:#F5B5C3;
+}
+.d{
+	background-color:#4DD9E6;          /*副词*/
+}
+.e{
+	background-color:#B5B5C3;          /*叹词*/
+}
+.f{
+	background-color:#947DEA;          /*方位词*/
+}
+.g{
+	background-color:#167805;          /*语素*/
+}
+.h,.k{
+	background-color:#EE7805;          /*前接成分 后接成份*/
+}
+.i{
+	background-color:#544714;          /*成语*/
+}
+.j{
+	background-color:#541F14;           /*简称略语*/
+}
+
+.l{
+	background-color:#63433A;          /*习用语*/
+}
+.m{
+	background-color:#96DBF8;         /*数词*/
+}
+.Ng{
+	background-color:#45433A;         /*名语素*/
+}
+.n{
+	background-color:#C7AEE7;          /*名词*/
+}
+.nr{
+	background-color:#C74CE7;          /*人名*/
+}
+.ns{
+	background-color:#C74C4B;          /*地名*/
+}
+.nt{
+	background-color:#C74CE7;          /*机构团体*/
+}
+.nz{
+	background-color:#C74C27;          /*其他专名*/
+}
+.o{
+    background-color:#104C52;          /*拟声词*/
+}
+.p{
+	background-color:#99CC67;          /*介词*/
+}
+.q{
+	background-color:#986699;         /*量词*/
+}
+.r{
+	background-color:#488FCE;          /*代词*/
+}
+.s{
+	background-color:#B9BD52;          /*处所词*/
+}
+.tg{
+	background-color:#D5B565;          /*时语素*/
+}
+.t{
+	background-color:#4BE465;          /*时间词*/
+}
+.u{
+	background-color:#CCC;             /*助词*/
+}
+.vg{
+	background-color:#4B1A65;             /*动语素*/
+}
+.v,.vd,.vn{
+	background-color:#FFCB99;          /*动词   副名词   名动词*/
+}
+.w{
+	background-color:#8BC3F5;          /*标点符号*/
+}
+.x{
+	background-color:#C6A650;          /*非语素词*/
+}
+.y{
+	background-color:#235250;          /*语气词*/
+}
+.z{
+	background-color:#AE8103;          /*状态词*/
+}
+

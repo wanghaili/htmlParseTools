@@ -1,0 +1,61 @@
+.page-main{
+    width:90%;
+    margin:0 auto;
+    padding-bottom: 60px;
+}
+
+.result-container{
+    width:100%;
+    margin-top:20px;
+    display: flex;
+}
+.result{
+    flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+    margin-left:20px;
+}
+.result-part{
+    padding: 20px;
+    margin-bottom:20px;
+    background: #F7F8F8;
+    box-shadow: 0 2px 2px #eee;
+}
+/*数据中心*/
+.data-result .data-input-wrap{
+    padding: 25px 60px;
+}
+.data-input-wrap form{
+    display: inline-block;
+    width: 82%;
+}
+.data-input-wrap input{
+    width:100%;
+}
+.data-input-wrap .data-upload-btn{
+    padding-top:5px;
+    padding-bottom: 5px;
+    margin-left:10px;
+}
+.data-table-wrap{
+    padding: 40px 20px;
+    min-height: 300px;
+}
+.data-table-wrap table{
+    width:92%;
+    margin:0px auto;
+}
+.data-table-wrap table td{
+    text-align: center;
+}
+.data-table-wrap table td a{
+    color:#0098E1;
+    margin-right:10px;
+}
+
+footer{
+    position: absolute;
+    bottom:0px;
+    left: 0px;
+}
